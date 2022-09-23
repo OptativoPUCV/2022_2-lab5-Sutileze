@@ -45,14 +45,14 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-  TreeNode *newNodo = createTreeNode(key ,value);
+  /*TreeNode *newNodo = createTreeNode(key ,value);
   TreeNode *aux;
 
   searchTreeMap(tree,key);
   aux = tree->current;
   newNodo->parent = aux;
-  if()
-  
+  if()*/
+
   
 }
 
