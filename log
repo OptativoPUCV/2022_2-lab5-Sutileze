@@ -36,3 +36,48 @@ Fri 23 Sep 2022 03:47:25 PM UTC:
  tests:  4|7
 total_score: 5/70
 e650752
+Fri 23 Sep 2022 04:08:23 PM UTC: 
+ treemap.c | 26 +++++++++++++++++++++++---
+ 1 file changed, 23 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:51:6: error: expected expression before ‘TreeNode’
+   51 |   if(TreeNode->root ==NULL)
+      |      ^~~~~~~~
+treemap.c:55:6: error: expected expression before ‘)’ token
+   55 |   if()
+      |      ^
+treemap.c: In function ‘minimum’:
+treemap.c:62:9: error: expected expression before ‘)’ token
+   62 |   while()
+      |         ^
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:86:15: error: ‘TreeMap’ has no member named ‘lowe_than’; did you mean ‘lower_than’?
+   86 |     if (tree->lowe_than(tree->current->pair->key,key)){
+      |               ^~~~~~~~~
+      |               lower_than
+treemap.c:87:22: error: ‘TreeNode’ has no member named ‘rigth’; did you mean ‘right’?
+   87 |       tree->current->rigth;//va comparando si es menor
+      |                      ^~~~~
+      |                      right
+treemap.c:94:10: error: ‘aux’ undeclared (first use in this function)
+   94 |   return aux->pair
+      |          ^~~
+treemap.c:94:10: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:94:19: error: expected ‘;’ before ‘}’ token
+   94 |   return aux->pair
+      |                   ^
+      |                   ;
+   95 | }
+      | ~                  
+treemap.c: In function ‘minimum’:
+treemap.c:63:1: error: control reaches end of non-void function [-Werror=return-type]
+   63 | }
+      | ^
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:95:1: error: control reaches end of non-void function [-Werror=return-type]
+   95 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+745a7e9
