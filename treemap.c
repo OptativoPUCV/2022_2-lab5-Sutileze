@@ -45,13 +45,34 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-  /*TreeNode *newNodo = createTreeNode(key ,value);
-  TreeNode *aux;
+  if (tree->root  == NULL){
+    tree->root = createTreeNode(key ,value);
+  }else {
+    tree->current = tree->root;
+    while(tree->current != NULL){
+      if(is_equal(tree,tree->current->pair->key,key)){
+        return;//return sin nada porque s usa para romper la funcion y que como ya está no se hace nada
+      }
+      if(tree->lower_than(key,tree->current->pair->key)){
+        if(tree->current->left == NULL){
+          tree->current->left ==createTreeNode(key ,value);// si recorre el mapa y se topa con un null , agrega ahi el nuevo nodo
+          tree->current->left->parent = tree->current;
+          tree->current = tree->current->letf;
+          return;
+        }
+      }
+      else{
+        if(tree->current->right == NULL){
+          tree->current->rigth =createTreeNode(key ,value);
+          tree->current->rigth->parent = tree->current;
+          tree->current = tree->current->rigth;
+          return;
+        }
+      }
+    }
 
-  searchTreeMap(tree,key);
-  aux = tree->current;
-  newNodo->parent = aux;
-  if()*/
+    
+  }
 
   
 }

@@ -228,3 +228,31 @@ Fri 23 Sep 2022 04:15:10 PM UTC:
  tests:  13|5
 total_score: 15/70
 3e4266d
+Fri 23 Sep 2022 04:30:14 PM UTC: 
+ treemap.c | 33 +++++++++++++++++++++++++++------
+ 1 file changed, 27 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:58:31: error: value computed is not used [-Werror=unused-value]
+   58 |           tree->current->left ==createTreeNode(key ,value);// si recorre el mapa y se topa con un null , agrega ahi el nuevo nodo
+      |           ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from test.c:4:
+treemap.c:60:42: error: ‘TreeNode’ has no member named ‘letf’; did you mean ‘left’?
+   60 |           tree->current = tree->current->letf;
+      |                                          ^~~~
+      |                                          left
+treemap.c:66:26: error: ‘TreeNode’ has no member named ‘rigth’; did you mean ‘right’?
+   66 |           tree->current->rigth =createTreeNode(key ,value);
+      |                          ^~~~~
+      |                          right
+treemap.c:67:26: error: ‘TreeNode’ has no member named ‘rigth’; did you mean ‘right’?
+   67 |           tree->current->rigth->parent = tree->current;
+      |                          ^~~~~
+      |                          right
+treemap.c:68:42: error: ‘TreeNode’ has no member named ‘rigth’; did you mean ‘right’?
+   68 |           tree->current = tree->current->rigth;
+      |                                          ^~~~~
+      |                                          right
+cc1: all warnings being treated as errors
+Compilation failed
+7453959
