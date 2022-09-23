@@ -279,3 +279,14 @@ treemap.c:68:42: error: ‘TreeNode’ has no member named ‘rigth’; did you 
       |                                          right
 Compilation failed
 9007c4f
+Fri 23 Sep 2022 04:35:16 PM UTC: 
+ treemap.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:63:31: error: ‘TreeMap’ has no member named ‘curren’; did you mean ‘current’?
+   63 |         tree->current = tree->curren->left;
+      |                               ^~~~~~
+      |                               current
+Compilation failed
+d62d9b2

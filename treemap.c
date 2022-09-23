@@ -57,17 +57,19 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         if(tree->current->left == NULL){
           tree->current->left = createTreeNode(key ,value);// si recorre el mapa y se topa con un null , agrega ahi el nuevo nodo
           tree->current->left->parent = tree->current;
-          tree->current = tree->current->letf;
+          tree->current = tree->current->left;
           return;
         }
+        tree->current = tree->curren->left;
       }
       else{
         if(tree->current->right == NULL){
-          tree->current->rigth =createTreeNode(key ,value);
-          tree->current->rigth->parent = tree->current;
-          tree->current = tree->current->rigth;
+          tree->current->right =createTreeNode(key ,value);
+          tree->current->right->parent = tree->current;
+          tree->current = tree->current->right;
           return;
         }
+        tree->current = tree->current->right;
       }
     }
 
