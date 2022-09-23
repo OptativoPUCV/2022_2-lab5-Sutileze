@@ -19,3 +19,14 @@ treemap.c:43:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 674b3ce
+Fri 23 Sep 2022 03:47:17 PM UTC: 
+ treemap.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:3: error: ‘newTree’ undeclared (first use in this function)
+   41 |   newTree->root = NULL;
+      |   ^~~~~~~
+treemap.c:41:3: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+70e9ae9
