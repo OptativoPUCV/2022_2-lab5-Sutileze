@@ -55,7 +55,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
       }
       if(tree->lower_than(key,tree->current->pair->key)){
         if(tree->current->left == NULL){
-          tree->current->left ==createTreeNode(key ,value);// si recorre el mapa y se topa con un null , agrega ahi el nuevo nodo
+          tree->current->left = createTreeNode(key ,value);// si recorre el mapa y se topa con un null , agrega ahi el nuevo nodo
           tree->current->left->parent = tree->current;
           tree->current = tree->current->letf;
           return;
