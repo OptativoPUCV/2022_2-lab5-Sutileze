@@ -290,3 +290,9 @@ treemap.c:63:31: error: ‘TreeMap’ has no member named ‘curren’; did you 
       |                               current
 Compilation failed
 d62d9b2
+Sat 24 Sep 2022 11:55:42 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  15|4
+total_score: 25/70
+404cac1
