@@ -90,13 +90,13 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap * tree, TreeNode* node) {
   TreeNode *parentNode = node->parent;
-  if (node->right == NULL && node->left == NULL) {
+  if (node->right == NULL && node->left == NULL) {//no tiene hijos
     if (tree->lower_than(parentNode->pair->key, node->pair->key) == 1) {
       parentNode->right = NULL; 
     }else if (tree->lower_than(node->pair->key, parentNode->pair->key) == 1){
       parentNode->left = NULL; 
     }
-  }else if ((node->left != NULL && node->right == NULL) || (node->left == NULL && node->right != NULL)) {
+  }else if ((node->left != NULL && node->right == NULL) || (node->left == NULL && node->right != NULL)) {// cuando tiene solo 1 hijo en alguno de los lados
     if (node->left == NULL) {
       if (tree->lower_than(parentNode->pair->key, node->pair->key) == 1) {
         parentNode->right = node->right; 
@@ -151,15 +151,21 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-  
-  Pair *aux = searchTreeMap(tree,key);
-  if(aux == NULL){
-    if(tree->lower_than(tree->current->pair->key,key)){
-      return tree->current->pair;
+  TreeNode* uppNode= tree->root;
+    TreeNode* auppNode= tree->root;
+    while (uppNode != NULL){
+        if (tree->lower_than(key, uppNode->pair->key) == 1){
+            auppNode= uppNode;
+            uppNode= uppNode->left;
+        }
+        else if (tree->lower_than(uppNode->pair->key, key) == 1){
+            if (tree->lower_than(auppNode->pair->key, uppNode->pair->key) == 1) auppNode= uppNode;
+            uppNode= uppNode->right;
+        }
+        else return uppNode->pair;
     }
-    aux = nextTreeMap(tree);
-  }
-  return aux;
+    if (tree->lower_than(auppNode->pair->key, key)) return NULL;
+    return auppNode->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree){
