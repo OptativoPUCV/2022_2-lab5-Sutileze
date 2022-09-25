@@ -190,6 +190,6 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     tree->current = tree->current->parent->parent;
   }
-  *a = tree->current->pair;
+  a = tree->current->pair;
   return a;
 }
