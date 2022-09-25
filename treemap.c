@@ -151,6 +151,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
+  Pair *a;
   Pair *aux = searchTreeMap(tree,key);
   if(aux == NULL){
     if(tree->lower_than(tree->current->pair->key,key)){
