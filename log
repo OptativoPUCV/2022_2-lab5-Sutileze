@@ -532,3 +532,17 @@ treemap.c:192:10: error: returning ‘int’ from a function with return type �
 cc1: all warnings being treated as errors
 Compilation failed
 c2f47c6
+Sun 25 Sep 2022 05:02:20 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:191:12: error: initialization of ‘int *’ from incompatible pointer type ‘Pair *’ [-Werror=incompatible-pointer-types]
+  191 |   int *a = tree->current->pair;
+      |            ^~~~
+treemap.c:192:10: error: returning ‘int’ from a function with return type ‘Pair *’ makes pointer from integer without a cast [-Werror=int-conversion]
+  192 |   return *a;
+      |          ^~
+cc1: all warnings being treated as errors
+Compilation failed
+ed19da5
