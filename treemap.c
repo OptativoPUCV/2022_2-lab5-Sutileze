@@ -151,7 +151,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    return NULL;
+  Pair *aux = searchTreeMap(tree,key);
+  if(aux == NULL){
+    if(tree->lower_than(key,tree->current->pair->key)){
+      return tree->current->pair;
+    }
 }
 
 Pair * firstTreeMap(TreeMap * tree){
