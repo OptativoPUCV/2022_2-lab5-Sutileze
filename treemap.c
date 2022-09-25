@@ -153,7 +153,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 Pair * upperBound(TreeMap * tree, void* key) {
   Pair *aux = searchTreeMap(tree,key);
   if(aux == NULL){
-    if(tree->lower_than(tree->current->pair->key,key)){
+    if(tree->lower_than(key,tree->current->pair->key)){
       return tree->current->pair;
     }
     aux = nextTreeMap(tree);
@@ -167,24 +167,5 @@ Pair * firstTreeMap(TreeMap * tree){
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  if(tree->current == NULL)return NULL;
-    if(tree->current->parent == tree->root ){
-      tree->current = NULL;
-      return NULL;
-  }else{
-    if(tree->current->right != NULL){
-    tree->current = minimum(tree->current->right);
-    return tree->current->pair;
-  }
-  if(tree->lower_than(tree->current->pair->key, tree->current->parent->pair->key) == 1){
-    tree->current = tree->current->parent;
-  }
-  else{
-    if(tree->current->parent->parent == NULL){
-      tree->current = NULL;
-      return NULL;
-    }
-    tree->current = tree->current->parent->parent;
-  }
-  return tree->current->pair;
+    return NULL;
 }
