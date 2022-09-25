@@ -155,7 +155,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    int minimum = minimum(tree->root);
+    int minimum_a = minimum(tree->root);
     tree->current = minimum
     return tree->current->pair;
 }
