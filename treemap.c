@@ -167,12 +167,13 @@ Pair * firstTreeMap(TreeMap * tree){
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+  if(tree->current == NULL)return NULL;
   if(tree->current->parent == tree->root ){
       tree->current = NULL;
       return NULL;
   }
   else{
-  if(tree->current == NULL)return NULL;
+  
   if(tree->current->right != NULL){
     tree->current = minimum(tree->current->right);
     return tree->current->pair;
