@@ -395,3 +395,29 @@ treemap.c:161:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 c23d8be
+Sun 25 Sep 2022 04:35:53 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘firstTreeMap’:
+treemap.c:158:22: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  158 |     int *minimum_a = minimum(tree->root);
+      |                      ^~~~~~~
+treemap.c:159:19: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘TreeNode * (*)(TreeNode *)’ [-Werror=incompatible-pointer-types]
+  159 |     tree->current = minimum
+      |                   ^
+treemap.c:159:28: error: expected ‘;’ before ‘return’
+  159 |     tree->current = minimum
+      |                            ^
+      |                            ;
+  160 |     return tree->current->pair;
+      |     ~~~~~~                  
+treemap.c:158:10: error: unused variable ‘minimum_a’ [-Werror=unused-variable]
+  158 |     int *minimum_a = minimum(tree->root);
+      |          ^~~~~~~~~
+treemap.c:161:1: error: control reaches end of non-void function [-Werror=return-type]
+  161 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+ee06a39
